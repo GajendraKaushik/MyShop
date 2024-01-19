@@ -109,13 +109,24 @@ def discountCalculator(details, Original_product):
                     above_15_amount = (quantity - 15) * Original_product[product]
                     tiered_50_discount_list.append(0.5 * above_15_amount)
                     # discount_amount.append({"tiered_50_discount":0.5 * individual_total_price[product]})
+    discount_amount= {}
+    # some discount list may be empty also if we are selecting one product 
+    if flat_10_discount_list :
+        discount_amount["flat_10_discount"]  = max(flat_10_discount_list)
+        
+    if bulk_5_discount_list:
+        discount_amount["bulk_5_discount"] = max(bulk_5_discount_list)
+    if bulk_10_discount_list:
+        discount_amount["bulk_10_discount"] = max(bulk_10_discount_list)
+    if tiered_50_discount_list :
+        discount_amount["tiered_50_discount"] = max(tiered_50_discount_list) 
 
-    discount_amount = {
-        "flat_10_discount": max(flat_10_discount_list),
-        "bulk_5_discount": max(bulk_5_discount_list),
-        "bulk_10_discount": max(bulk_10_discount_list),
-        "tiered_50_discount": max(tiered_50_discount_list),
-    }
+    # discount_amount = {
+    #     "flat_10_discount": max(flat_10_discount_list),
+    #     "bulk_5_discount": max(bulk_5_discount_list),
+    #     "bulk_10_discount": max(bulk_10_discount_list),
+    #     "tiered_50_discount": max(tiered_50_discount_list),
+    # }
     max_discount = 0
     applicable_rule = ""
     for dicount_rule, amount in discount_amount.items():

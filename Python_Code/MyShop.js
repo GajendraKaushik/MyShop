@@ -121,6 +121,8 @@ function discountCalculator(details, originalProduct) {
                 break;
         }
     }
+
+    
     //  here we are calculating the maxdiscount in each type of discount from all product 
     const discountAmount = {
         flat_10_discount: Math.max(...flat_10_discountList),
@@ -138,7 +140,6 @@ function discountCalculator(details, originalProduct) {
             applicableRule = discountRule;
         }
     }
-    console.log(max_discount, applicableRule, " rule")
     return [max_discount, applicableRule];
 }
 
