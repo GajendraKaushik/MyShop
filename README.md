@@ -41,3 +41,10 @@ The MyShop application works in below manner:
     -> Then it will prompt the Oder summary at the end of the program 
    
    
+## Validation 
+I have added some validation also in the MyShop application: 
+    
+    -> If the product we enter is not in the cart then we will show some warning.
+    -> The number of units should be greater than Zero, else warning will be shown. 
+    -> If no discount rule is applicable then we will show a prompt that please buy some more products to get a discount.
+
