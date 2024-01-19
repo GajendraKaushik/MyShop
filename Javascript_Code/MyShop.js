@@ -184,7 +184,12 @@ function ShowSummary(details, discount, fee) {
     }
     console.log("Gift wrapping fee: ", fee[0]);
     console.log("Shipping Charge: ", fee[1]);
-    console.log("Total : ", subTotal - discount[0]);
+    if (discount == 0){
+        console.log("Total : ", subTotal);
+    }else{
+        console.log("Total : ", subTotal - discount[0]);
+    }
+    
 }
 
 // ############# function calling starts from here  ########## 
